@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* html {
+  font-size: 4.266666666666667vw;
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
+}
+
+.pv-video-bottom {
+  width: 414px;
+  position: fixed!important;
+  bottom: 0;
+  z-index: 999!important;
+  left: calc(50%)!important;
+  right: unset!important;
+  transform: translateX(-50%)!important;
+}
+
+.plv-player-container .plv-player-skin.plv-player-skin__moveOut {
+  bottom: 0!important;
+}
+
+.plv-player-container .plv-player-skin {
+  position: fixed!important;
+  bottom: -58px!important;
+  z-index: 999!important;
+  transform: translateZ(100px)
+}
+
+.plv-player-container .plv-player-skin__setting {
+  display: none!important;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

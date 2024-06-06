@@ -23,6 +23,10 @@ if (process.env.NODE_ENV === "production") {
     output: "export",
     trailingSlash: true,
     distDir: "../{{name}}-static",
+    {{#if isRoot}}
+    {{else}}
+    basePath: "/{{name}}-static",
+    {{/if}}
   });
 }
 const nextConfig = config;

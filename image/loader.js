@@ -4,7 +4,12 @@
 {{#if isRoot}}
 const prefix = "";
 {{else}}
-const prefix = "/{{name}}";
+let prefix = "";
+if(process.env.NODE_ENV === "production") {
+  prefix = "/{{name}}-static";
+} else {
+  prefix = "/{{name}}";
+}
 {{/if}}
 
 export default function myImageLoader({ src, width, quality }) {
